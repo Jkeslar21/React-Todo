@@ -128,9 +128,6 @@ table {
     border-radius: 12px;
     font-family: 'Permanent Marker', cursive;
 }
-.inputClass:hover{
-    background-color:skyblue;
-}
 .addTaskBtn{
     background-color: white;
     color: maroon;
