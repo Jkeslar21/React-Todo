@@ -94,5 +94,67 @@ table {
 }
 .check{
     display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+.rmBtn{
+    background-color: white;
+    color: maroon;
+    font-weight: bolder;
+    border-radius: 50%;
+    float: right;
+    padding: 0 7px;
+    padding-bottom: 2px;
+    font-family: 'Permanent Marker', cursive;
+}
+.rmBtn:hover{
+    background-color: maroon;
+    color: white;
+    cursor: pointer;
+}
+.left{
+    display: flex;
     flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+}
+.taskValue:hover{
+    color: white;
+    text-decoration: underline;
+    cursor: default;
+}
+.inputClass{
+    text-align: center;
+    border-radius: 12px;
+    font-family: 'Permanent Marker', cursive;
+}
+.inputClass:hover{
+    background-color:skyblue;
+}
+.addTaskBtn{
+    background-color: white;
+    color: maroon;
+    border-radius: 12px;
+    font-family: 'Permanent Marker', cursive;
+    margin-right: 5px;
+}
+.addTaskBtn:hover{
+    background-color: maroon;
+    color: white;
+    cursor: pointer;
+}
+.clearTaskBtn{
+    background-color: white;
+    color: maroon;
+    border-radius: 12px;
+    font-family: 'Permanent Marker', cursive;
+    margin-left: 5px;
+}
+.clearTaskBtn:hover{
+    background-color: maroon;
+    color: white;
+    cursor: pointer;
+}
+.buttonDiv{
+    margin-top: 3%;
 }
