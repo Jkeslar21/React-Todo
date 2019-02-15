@@ -92,3 +92,7 @@ table {
     font-size: 1.6rem;
     font-family: 'Permanent Marker', cursive;
 }
+.check{
+    display: flex;
+    flex-direction: row;
+}
