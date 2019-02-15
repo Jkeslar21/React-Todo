@@ -13,24 +13,19 @@ const list = [];
     this.state = {
         list: list,
         name: '',
-        id: Date.now(),
-        completed: false
       };
   }
 //////////////////////////////////////////////////  
   addTask = e => {
     e.preventDefault();
     const newTask = {
-      task: this.state.task,
-      id: this.state.id,
-      completed: this.state.completed,
+      task: this.state.name,
+      id: Date.now(),
+      completed: false
     };
-
     this.setState({
       list: [...this.state.list, newTask],
-      task: '',
-      id: '',
-      completed: ''
+      name: '',
     });
   };
 //////////////////////////////////////////////////
@@ -39,6 +34,24 @@ const list = [];
       [e.target.name]: e.target.value
     });
   };
+///////////////////////////////////////////////////
+  toggleTask = taskID => {
+    console.log(taskID)
+    this.setState({
+      list: this.state.list.map(task => {
+        if (taskID === task.id) {
+          return {...task, completed: !task.completed}
+        }
+        return task;
+      })
+    })
+  }
+////////////////////////////////////////////////////
+clearCompleted = e => {
+  this.setState({
+    list: this.state.list.filter(task => !task.completed)
+  });
+};
 //////////////////////////////////////////////////
   render() {
     return (
@@ -46,7 +59,7 @@ const list = [];
         <h1 className='title'>Task List:</h1>
         <div className="todo-list">
           {this.state.list.map(i => (
-            <List key={i.id} taskList={i} />
+            <List key={i.id} task={i} toggleTask={this.toggleTask} />
           ))}
         </div>
         <TodoForm
@@ -54,7 +67,10 @@ const list = [];
           list={this.state.list}
           handleChanges={this.handleChanges}
           id={this.state.id}
+          name={this.state.name}
           completed={this.state.completed}
+          toggleTask={this.toggleTask}
+          clearCompleted={this.clearCompleted}
         />
       </div>
     );

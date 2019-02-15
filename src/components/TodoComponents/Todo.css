@@ -83,3 +83,12 @@ table {
     font-size: 1.6rem;
     font-family: 'Permanent Marker', cursive;
 }
+.todo-list .completed{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: grey;
+    text-decoration: line-through;
+    font-size: 1.6rem;
+    font-family: 'Permanent Marker', cursive;
+}
